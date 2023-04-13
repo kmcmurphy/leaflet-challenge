@@ -8,5 +8,14 @@ The map features:
   - Marker color is representative of the depth of the quake
 - A custom legend
 - Two different layers - a street view or topo view
+- An informational pop-up with:
+  - Description of where the quake occurred
+  - The time and date
+  - The magnitude
+  - The depth
+  - A link to additional information on the USGS site
 
 You can check out a live demo of the map here: https://kmcmurphy.github.io/leaflet-challenge/
+
+![image](https://user-images.githubusercontent.com/7529880/231885962-6f852fbf-fc67-4129-be39-d450f23c4dbd.png)
+
