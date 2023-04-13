@@ -8,3 +8,5 @@ The map features:
   - Marker color is representative of the depth of the quake
 - A custom legend
 - Two different layers - a street view or topo view
+
+You can check out a live demo of the map here: https://kmcmurphy.github.io/leaflet-challenge/
