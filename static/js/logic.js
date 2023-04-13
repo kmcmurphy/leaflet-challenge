@@ -14,7 +14,7 @@
     center: [
       37.09, -95.71
     ],
-    zoom: 5,
+    zoom: 3.5,
     layers: [street]
   });
 
@@ -39,11 +39,14 @@ function createFeatures(earthquakeData) {
     <p> 
     ${new Date(feature.properties.time)}</br>
     <b>Magnitude:</b> ${feature.properties.mag}</br>
-    <b>Quake Depth:</b> ${feature.geometry.coordinates[2]}
+    <b>Quake Depth:</b> ${feature.geometry.coordinates[2]}</br>
+    <a href = "${feature.properties.url}" target=_blank>More Info...</a>
     </p>`);
 
 
   }
+
+  //Specify colors for markers and key
 
   //let colorArray = ["#8CD47E","#7ABD7E","#F8D66D","#FFB54C","#FF6961","red"]
   let colorArray = ["#43D0AA","#46CED2","#49A7D4","#4C80D6","#4F59D8","purple"]
@@ -78,7 +81,7 @@ function createFeatures(earthquakeData) {
 
     pointToLayer(feature, latlng) {
       return L.circleMarker(latlng, {
-        radius: feature.properties.mag * 3,
+        radius: feature.properties.mag * 4,
         fillColor: color(feature),
         color: "white",
         weight: 1,
@@ -108,7 +111,7 @@ function createFeatures(earthquakeData) {
   
         labels.push(`<i style="background:${legcolors[i]}"></i> ${from}${to ? `&ndash;${to}` : '+'}`);
       }
-      let lengendInfo = "<b>Earthquake Depth</b><hr>";
+      let lengendInfo = "<b>Earthquake Depth (km)</b><hr>";
       div.innerHTML = lengendInfo + labels.join('<br>');
       return div;
     };
